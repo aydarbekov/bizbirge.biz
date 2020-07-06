@@ -34,7 +34,6 @@ class AdCreateView(CreateView):
         return context
 
     def post(self, request, *args, **kwargs):
-        print(request.POST.get('ad_type'))
         form = self.get_form()
         if form.is_valid():
             return self.form_valid_for_full(form)
