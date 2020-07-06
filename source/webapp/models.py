@@ -2,7 +2,7 @@ from django.db import models
 
 GROUP_CHOICES = (
     ('medicine', 'Лекарства'),
-    ('injection', 'Капельница / уколы'),
+    ('injection', 'Инъекции'),
     ('finance', 'Финансы'),
     ('auto', 'Авто'),
     ('consultation', 'Консультация'),

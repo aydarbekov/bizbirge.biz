@@ -24,7 +24,7 @@
                         <th scope="row" class="col1">{{ forloop.counter }}</th>
                         <td>{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
-                        <td>{{ ad.group }}</td>
+                        <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
                         <td>
                             {% if ad.status == 'active' %}
