@@ -5,6 +5,29 @@ body{
 .table a{
     color: red!important;
 }
+footer .container-fluid{
+    height: 100px;
+    background-color: #343a40;
+    color: white;
+}
+footer .container-fluid a{
+    color: lightblue;
+}
+.navbar-brand{
+    font-weight: 600;
+    font-size: 25px;
+    color: lightslategray!important;
+}
+.navbar p{
+    font-weight: 600!important;
+    font-size: 25px;
+    color: lightslategray!important;
+    margin: 0;
+    margin-left: -109px;
+}
+.ad-buttons a{
+    font-weight: 500;
+}
 
 
 @media screen and (max-width:576px) {
@@ -28,4 +51,11 @@ body{
     .search-input{
         width: 50%;
     }
+    .navbar-brand{
+        font-size: 15px;
+    }
+    .navbar p {
+    font-weight: 600!important;
+    font-size: 10px;
+}
 }
