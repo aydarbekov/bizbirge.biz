@@ -93,7 +93,7 @@ class DeactivatedListView(LoginRequiredMixin, ListView):
 class AdListView(ListView):
     context_object_name = 'ad'
     template_name = 'ad_list.html'
-    paginate_by = 10
+    paginate_by = 20
     paginate_orphans = 0
     ordering = '-date'
 

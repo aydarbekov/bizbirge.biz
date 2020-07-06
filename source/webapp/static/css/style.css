@@ -28,6 +28,9 @@ footer .container-fluid a{
 .ad-buttons a{
     font-weight: 500;
 }
+.ads-index-table h3{
+        text-align: center;
+    }
 
 
 @media screen and (max-width:576px) {
