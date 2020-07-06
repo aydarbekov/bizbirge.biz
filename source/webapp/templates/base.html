@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+
+    {#    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">#}
+    {#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>#}
+    {#    <link rel="stylesheet" href="{% static "css/jquery-ui.min.css" %}">#}
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+    {#    <link rel="stylesheet" href="{% static "css/star.css" %}">#}
+    {% block styles %}{% endblock %}
+</head>
+<body>
+{#<div class="empty-collapse"><i class="fas fa-times"></i></div>#}
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a href="{% url 'webapp:index' %}" class="navbar-brand">Jardam</a>
+            {% if request.user.is_authenticated %}
+                {{ request.user }}!
+                <a class="login  d-flex btn btn-info " href="{% url 'accounts:logout' %}" role="button">Выйти</a>
+                <a href="{% url 'webapp:deactivated_list' %}" role="button" class="btn btn-info">Деактивированные</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-around my-3 flex-wrap">
+        <a href="{% url 'webapp:ad_create' type='need_help'%}" role="button" class="btn btn-light text-uppercase my-1">Нужна помощь</a>
+        <a href="{% url 'webapp:ad_create' type='can_help'%}" role="button" class="btn btn-light text-uppercase my-1">Могу помочь</a>
+        <a href="{% url 'webapp:ad_create' type='can_consult'%}" role="button" class="btn btn-light text-uppercase my-1">Могу Проконсультировать</a>
+    </div>
+{#    <div class="container mb-3">#}
+{#        <form class="form-inline search-form">#}
+{#            <input class="form-control mr-sm-2 search-input" type="search" placeholder="Поиск" aria-label="Search">#}
+{#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>#}
+{#        </form>#}
+{#    </div>#}
+</header>
+{#{% include "partial/messages.html" %}#}
+{% block content %}{% endblock %}
+
+<footer>
+</footer>
+<script type="application/javascript" src="{% static "js/jquery-3.5.1.js" %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script type="application/javascript" src="{% static "js/bootstrap.js" %}"></script>
+
+{#<script type="application/javascript" src="{% static "js/jquery-3.5.1.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/jquery.min.js" %}"></script>#}
+{#<script type="text/javascript" src='{% static "js/jquery-ui.min.js" %}'></script>#}
+{#<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"#}
+{#        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script type="application/javascript" src="{% static "js/bootstrap.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/fontawsome.js" %}"></script>#}
+{#<script type="text/javascript" src="{% static "js/slick.min.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/base.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/review.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/favorite.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/compare_ajax.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/cart_ajax.js" %}"></script>#}
+{#<script type="application/javascript" src="{% static "js/offer.js" %}"></script>#}
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

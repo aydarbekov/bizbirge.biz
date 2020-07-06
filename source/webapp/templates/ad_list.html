@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Jardam{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="ads-index-table">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="col1">#</th>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Город</th>
+                    <th scope="col">Тип</th>
+                    <th scope="col" colspan="2">Описание</th>
+                    <th scope="col">Удаление</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ad in ad %}
+                    <tr>
+                        <th scope="row" class="col1">{{ forloop.counter }}</th>
+                        <td>{{ ad.number }}</td>
+                        <td>{{ ad.city }}</td>
+                        <td>{{ ad.group }}</td>
+                        <td colspan="2">{{ ad.description }}</td>
+                        <td>
+                            {% if ad.status == 'active' and ad.ad_type != 'can_consult'%}
+                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>
+                            {% elif ad.status == 'deactivated' %}
+                                <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>
+                            {% elif  ad.ad_type == 'can_consult' %}
+                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Удалить</a>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% include 'partial/pagination.html' %}
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}
