@@ -1,6 +1,7 @@
 from django.db import models
 
 GROUP_CHOICES = (
+    ('---', '---'),
     ('medicine', 'Лекарства'),
     ('injection', 'Инъекции'),
     ('finance', 'Финансы'),

@@ -4,6 +4,12 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
+    <div class="container mb-3">
+        <form class="form-inline" action="{% url 'webapp:ad_list' type='search' %}" method="GET">
+            {% include 'partial/simple_search.html' %}
+            <input type="submit" class='btn btn-dark search-button' value="Поиск">
+        </form>
+    </div>
     <div class="container">
         <div class="ads-index-table">
             <h3>Нужна помощь</h3>
@@ -58,7 +64,7 @@
                         <th scope="row" class="col1">{{ forloop.counter }}</th>
                         <td>{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
-                        <td>{{ ad.group }}</td>
+                        <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
                         <td>
                             {% if ad.status == 'active' %}
@@ -92,7 +98,7 @@
                         <th scope="row" class="col1">{{ forloop.counter }}</th>
                         <td>{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
-                        <td>{{ ad.group }}</td>
+                        <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
                         <td><a href="{% url 'webapp:ad_to_delete' ad.pk %}">Удалить</a></td>
                     </tr>
