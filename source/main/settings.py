@@ -137,7 +137,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, "static")
 ]
-STATIC_ROOT = '../source/webapp/static/'
+STATIC_ROOT = 'source/webapp/static/'
 
 
 HOST_NAME = 'localhost:8000'
