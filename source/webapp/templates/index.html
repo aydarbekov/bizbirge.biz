@@ -32,7 +32,7 @@
                         <td colspan="2">{{ ad.description }}</td>
                         <td>
                             {% if ad.status == 'active' %}
-                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>
+{#                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>#}
                             {% elif ad.status == 'deactivated' %}
                                 <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>
                             {% endif %}
