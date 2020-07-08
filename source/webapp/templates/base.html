@@ -8,15 +8,16 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
     {% block styles %}{% endblock %}
 </head>
 <body>
 <header>
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <a href="https://www.instagram.com/bizbirge.biz/" class="navbar-brand" target="_blank">@Bizbirge.biz</a>
+            <a href="https://www.bizbirge.biz" class="navbar-brand" target="_blank">Bizbirge.biz</a>
             <p>Наша сила в единстве!</p>
-            <p>0702411324</p>
+            <p><a href="https://www.instagram.com/bizbirge.biz/" target="_blank"><i class="fab fa-instagram insta-logo"></i></a>0702411324</p>
             {% if request.user.is_authenticated %}
                 {{ request.user }}!
                 <a class="login  d-flex btn btn-info " href="{% url 'accounts:logout' %}" role="button">Выйти</a>
