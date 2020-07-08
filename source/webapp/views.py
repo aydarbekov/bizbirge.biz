@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -51,6 +52,7 @@ class AdCreateView(CreateView):
         self.object = form.save(commit=True)
         self.object.ad_type = self.request.POST.get('ad_type')
         self.object.save()
+        messages.add_message(self.request, messages.SUCCESS, 'Объявление создано.')
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid_for_full(self, form):
