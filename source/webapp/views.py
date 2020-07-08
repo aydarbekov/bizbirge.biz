@@ -27,7 +27,6 @@ class IndexView(ListView):
         context = super().get_context_data()
         context['ads_sorted'] = Ad.objects.filter(status='active', ad_type='need_help').order_by('-date')[:5]
         context['ads_sorted_can_help'] = Ad.objects.filter(status='active', ad_type='can_help').order_by('-date')[:5]
-        context['ads_sorted_can_consult'] = Ad.objects.filter(status='active', ad_type='can_consult').order_by('-date')[:5]
         context['form'] = self.form
         return context
 

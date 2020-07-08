@@ -74,32 +74,6 @@
             </table>
             <a href="{% url 'webapp:ad_list' 'can_help' %}"class="btn btn-secondary to-list">Перейти к полному списку</a>
         </div>
-        <div class="ads-index-table mt-3">
-            <h3>Могу проконсультировать</h3>
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Номер</th>
-                    <th scope="col">Город</th>
-                    <th scope="col">Тип</th>
-                    <th scope="col" colspan="2">Описание</th>
-{#                    <th scope="col">Удаление</th>#}
-                </tr>
-                </thead>
-                <tbody>
-                {% for ad in ads_sorted_can_consult %}
-                    <tr>
-                        <td class="table-number">{{ ad.number }}</td>
-                        <td>{{ ad.city }}</td>
-                        <td>{{ ad.get_group_display }}</td>
-                        <td colspan="2">{{ ad.description }}</td>
-{#                        <td><a href="{% url 'webapp:ad_to_delete' ad.pk %}">Удалить</a></td>#}
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            <a href="{% url 'webapp:ad_list' 'can_consult' %}" role="button" class="btn btn-secondary to-list">Перейти к полному списку</a>
-        </div>
     </div>
 
 

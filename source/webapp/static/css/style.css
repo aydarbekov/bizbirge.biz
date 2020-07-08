@@ -34,7 +34,10 @@ footer .container-fluid a{
 .ads-index-table h3{
     text-align: center;
 }
-
+.insta-logo{
+    color: lightslategray;
+    margin-right: 15px;
+}
 @media screen and (max-width:768px) {
     .create-btns{
         flex-direction: column;
