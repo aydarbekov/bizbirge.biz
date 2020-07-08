@@ -15,7 +15,6 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="col1">#</th>
                     <th scope="col">Номер</th>
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
@@ -26,7 +25,6 @@
                 <tbody>
                 {% for ad in ad %}
                     <tr>
-                        <th scope="row" class="col1">{{ forloop.counter }}</th>
                         <td>{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
                         <td>{{ ad.get_group_display }}</td>

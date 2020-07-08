@@ -10,13 +10,12 @@
             <input type="submit" class='btn btn-dark search-button' value="Поиск">
         </form>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="ads-index-table">
             <h3>Нужна помощь</h3>
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="col1">#</th>
                     <th scope="col">Номер</th>
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
@@ -27,10 +26,9 @@
                 <tbody>
                 {% for ad in ads_sorted %}
                     <tr>
-                        <th scope="row" class="col1">{{ forloop.counter }}</th>
-                        <td>{{ ad.number }}</td>
+                        <td class="table-number">{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
-                        <td>{{ ad.get_group_display }}</td>
+                        <td><p>{{ ad.get_group_display }}</p></td>
                         <td colspan="2">{{ ad.description }}</td>
                         <td>
                             {% if ad.status == 'active' %}
@@ -50,7 +48,6 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="col1">#</th>
                     <th scope="col">Номер</th>
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
@@ -61,8 +58,7 @@
                 <tbody>
                 {% for ad in ads_sorted_can_help %}
                     <tr>
-                        <th scope="row" class="col1">{{ forloop.counter }}</th>
-                        <td>{{ ad.number }}</td>
+                        <td class="table-number">{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
                         <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
@@ -84,7 +80,6 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="col1">#</th>
                     <th scope="col">Номер</th>
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
@@ -95,8 +90,7 @@
                 <tbody>
                 {% for ad in ads_sorted_can_consult %}
                     <tr>
-                        <th scope="row" class="col1">{{ forloop.counter }}</th>
-                        <td>{{ ad.number }}</td>
+                        <td class="table-number">{{ ad.number }}</td>
                         <td>{{ ad.city }}</td>
                         <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>

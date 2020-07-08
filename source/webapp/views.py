@@ -143,6 +143,10 @@ class AdListView(ListView):
             elif city != '' and descr != '' and group != '---':
                 queryset = Ad.objects.filter(ad_type=type, status='active', city__icontains=city, description__icontains=descr, group__icontains=group).order_by('-date')
                 return queryset
+            elif city == '' and descr == '' and group == '---':
+                queryset = Ad.objects.filter(ad_type=type, status='active').order_by('-date')
+                return queryset
+
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data()
