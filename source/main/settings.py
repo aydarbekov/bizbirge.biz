@@ -25,8 +25,7 @@ SECRET_KEY = 'lvucmzjrto@8sl%l!8tu=@ecso1=*n&)@uq%-_&emmyd$q=m-u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['161.35.25.144']
-
+ALLOWED_HOSTS = ['161.35.25.144',  'www.bizbirge.biz', 'bizbirge.biz']
 
 # Application definition
 
