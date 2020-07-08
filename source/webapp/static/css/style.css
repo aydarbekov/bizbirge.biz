@@ -39,6 +39,10 @@ footer .container-fluid a{
     .create-btns{
         flex-direction: column;
     }
+    .navbar p {
+        font-weight: 600!important;
+        font-size: 15px;
+    }
 }
 @media screen and (max-width:576px) {
     .table {
@@ -51,7 +55,7 @@ footer .container-fluid a{
     }
     .table th, .table td {
         padding: 10px 5px;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
     }
     .ads-index-table h3{
         font-size: 15px;

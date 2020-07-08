@@ -50,7 +50,6 @@ class AdCreateView(CreateView):
     def form_valid_for_full(self, form):
         self.object = form.save(commit=True)
         self.object.ad_type = self.request.POST.get('ad_type')
-        print(self.object.ad_type)
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
 
@@ -121,7 +120,6 @@ class AdListView(ListView):
             city = self.search_value['city']
             type = self.search_value['type']
             group = self.search_value['group']
-            print(descr, city, type, group)
             if city != '' and descr == '' and group == '---':
                 queryset = Ad.objects.filter(ad_type=type, status='active', city__icontains=city).order_by('-date')
                 return queryset
