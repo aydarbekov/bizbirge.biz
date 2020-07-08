@@ -10,7 +10,7 @@ GROUP_CHOICES = (
     ('another', 'Другое'),
 )
 TYPE_CHOICES = (
-    ('need_help', 'Нужна помошь'),
+    ('need_help', 'Нужна помощь'),
     ('can_help', 'Могу помочь'),
     ('can_consult', 'Могу проконсультировать'),
 )
