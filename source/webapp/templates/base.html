@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Bizbirge.biz{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="icon" href="{% static 'logo/logo_bizbirgebiz.jpg' %}">
 
     {#    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">#}
     {#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>#}
@@ -20,7 +21,7 @@
 <header>
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <a href="https://www.instagram.com/bizbirge.biz/" class="navbar-brand" target="_blank">@Bizbirge.biz</a>
+            <a href="{% url 'webapp:index' %}" class="navbar-brand">Bizbirge.biz</a>
             <p>Наша сила в единстве!</p>
             <p>0702411324</p>
             {% if request.user.is_authenticated %}
@@ -41,7 +42,7 @@
 
 <footer>
     <div class="container-fluid mt-4 d-flex justify-content-center align-items-center">
-        <p>Разработано <a href="https://www.instagram.com/akyl.aydarbekov/">@aydarbekov</a></p>
+        <p>Разработано <a href="https://www.instagram.com/akyl.aydarbekov/">@aydarbekov</a> & <a href="https://www.instagram.com/samatuulu11/">@samatuulu11</a></p>
     </div>
 </footer>
 <script type="application/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script>
