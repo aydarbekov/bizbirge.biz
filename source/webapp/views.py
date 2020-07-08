@@ -87,7 +87,7 @@ class AdActivateView(View):
 class DeactivatedListView(LoginRequiredMixin, ListView):
     context_object_name = 'ad'
     model = Ad
-    template_name = 'index.html'
+    template_name = 'ad_list.html'
     paginate_by = 10
     paginate_orphans = 3
 
