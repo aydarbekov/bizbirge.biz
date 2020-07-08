@@ -88,15 +88,13 @@ class AdActivateView(View):
 
 class DeactivatedListView(LoginRequiredMixin, ListView):
     context_object_name = 'ad'
-    model = Ad
     template_name = 'ad_list.html'
     paginate_by = 10
     paginate_orphans = 3
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data()
-        context['ads_sorted'] = Ad.objects.filter(status='deactivated').order_by('-date')
-        return context
+    def get_queryset(self, *args, **kwargs):
+        queryset = Ad.objects.filter(status='deactivated').order_by('-date')
+        return queryset
 
 
 class AdListView(ListView):
