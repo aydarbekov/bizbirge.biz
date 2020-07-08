@@ -20,7 +20,7 @@
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
                     <th scope="col" colspan="2">Описание</th>
-                    <th scope="col">Удаление</th>
+{#                    <th scope="col">Удаление</th>#}
                 </tr>
                 </thead>
                 <tbody>
@@ -30,13 +30,13 @@
                         <td>{{ ad.city }}</td>
                         <td><p>{{ ad.get_group_display }}</p></td>
                         <td colspan="2">{{ ad.description }}</td>
-                        <td>
-                            {% if ad.status == 'active' %}
+{#                        <td>#}
+{#                            {% if ad.status == 'active' %}#}
 {#                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>#}
-                            {% elif ad.status == 'deactivated' %}
-                                <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>
-                            {% endif %}
-                        </td>
+{#                            {% elif ad.status == 'deactivated' %}#}
+{#                                <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>#}
+{#                            {% endif %}#}
+{#                        </td>#}
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -52,7 +52,7 @@
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
                     <th scope="col" colspan="2">Описание</th>
-                    <th scope="col">Удаление</th>
+{#                    <th scope="col">Удаление</th>#}
                 </tr>
                 </thead>
                 <tbody>
@@ -62,13 +62,13 @@
                         <td>{{ ad.city }}</td>
                         <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
-                        <td>
-                            {% if ad.status == 'active' %}
-                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>
-                            {% elif ad.status == 'deactivated' %}
-                                <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>
-                            {% endif %}
-                        </td>
+{#                        <td>#}
+{#                            {% if ad.status == 'active' %}#}
+{#                                <a href="{% url 'webapp:ad_to_delete' ad.pk %}">Уже помогли</a>#}
+{#                            {% elif ad.status == 'deactivated' %}#}
+{#                                <a href="{% url 'webapp:ad_activate' ad.pk %}">Активировать</a>#}
+{#                            {% endif %}#}
+{#                        </td>#}
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -84,7 +84,7 @@
                     <th scope="col">Город</th>
                     <th scope="col">Тип</th>
                     <th scope="col" colspan="2">Описание</th>
-                    <th scope="col">Удаление</th>
+{#                    <th scope="col">Удаление</th>#}
                 </tr>
                 </thead>
                 <tbody>
@@ -94,7 +94,7 @@
                         <td>{{ ad.city }}</td>
                         <td>{{ ad.get_group_display }}</td>
                         <td colspan="2">{{ ad.description }}</td>
-                        <td><a href="{% url 'webapp:ad_to_delete' ad.pk %}">Удалить</a></td>
+{#                        <td><a href="{% url 'webapp:ad_to_delete' ad.pk %}">Удалить</a></td>#}
                     </tr>
                 {% endfor %}
                 </tbody>
