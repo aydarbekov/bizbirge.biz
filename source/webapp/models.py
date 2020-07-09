@@ -22,9 +22,9 @@ STATUS_CHOICES = (
 class Ad(models.Model):
     ad_type = models.CharField(max_length=50, choices=TYPE_CHOICES, default=TYPE_CHOICES[0][0], verbose_name="Тема")
     number = models.CharField(max_length=50, verbose_name='Номер телефона')
-    city = models.CharField(max_length=50, verbose_name='Город')
+    city = models.CharField(max_length=100, verbose_name='Город')
     group = models.CharField(max_length=50, choices=GROUP_CHOICES, default=GROUP_CHOICES[0][0], verbose_name="Тема")
-    description = models.TextField(max_length=3000, verbose_name='Описание')
+    description = models.TextField(max_length=10000, verbose_name='Описание')
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default=STATUS_CHOICES[0][0], verbose_name='Статус')
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name='Дата добавления')
 
